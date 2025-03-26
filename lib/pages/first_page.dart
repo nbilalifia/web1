@@ -7,36 +7,39 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("1st page")),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // common to place a drawer header here
-            DrawerHeader(
-              child: Icon(
-                Icons.favorite,
-                size: 48,
-              ),
-            ),
-            
-            //home page list tile
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("H O M E"),
-            ),
-
-            ListTile(
-              leading: Icon(Icons.people),
-              title: Text("P R O F I L E"),
-            ),
-
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("S E T T I N G S"),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text("Pertemuan 2"),
+        backgroundColor: Colors.amberAccent,
+        leading: Icon(Icons.home),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: (){
+                print("Hello World");
+              },
+          ),
+        ],
       ),
-    );
+      body: SafeArea( //cara bikin safe area: wrap with widget -> ganti widget dengan SafeArea
+        child: InkWell(
+          child: Container(
+            alignment: Alignment.center, // set all the container to center
+            margin: EdgeInsets.all(20),
+            height: 100,
+            width: 100,
+          
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Center(
+              child: Text(
+                "Hello World",
+                style:TextStyle() ,), // set center just to text
+          ),
+              ),
+        ),
+      ));
   }
 }
